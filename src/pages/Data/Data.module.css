@@ -1,0 +1,20 @@
+
+.title{
+    font-family: 'Sigmar One', sans-serif;
+  font-size: 1.5rem;
+}
+.breadcrumbs {
+  font-family: sans-serif;
+  color:grey;
+}
+
+.content {
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  top: 5rem;
+  width: 50rem;
+  margin: 0 auto 0 auto;
+  font-size: 1rem;
+  line-height: 2rem;
+}
