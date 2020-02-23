@@ -1,0 +1,8 @@
+#!/bin/sh
+# Stats the .env file in the parent dir
+set -o allexport
+[[ -f ../../.env ]] && source ../../.env
+set +o allexport
+
+./preprocess.js $DATA_RAW_SOURCE
+./generateImportSQL.js $DATA_RAW_SOURCE $DATABASE_REMOTE_DATA_DIR

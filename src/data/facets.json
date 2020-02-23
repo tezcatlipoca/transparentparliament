@@ -1,0 +1,182 @@
+[{
+	"name": "Facets of Parliamentary Speech",
+	"size": 0,
+	"strokeColor": "black",
+	"fillColor": "#5fbffe",
+	"linkColor": "#000000",
+	"content": {
+		"__html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor tempus est id vestibulum. Nullam tincidunt luctus ligula at lacinia. Maecenas sit amet aliquam ante. Praesent aliquet mi a risus venenatis aliquam. Fusce tristique ut elit in hendrerit. Nulla ut diam tellus. Nam sed tincidunt quam. Vestibulum felis sem, malesuada a risus luctus, tincidunt viverra est.<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor tempus est id vestibulum. Nullam tincidunt luctus ligula at lacinia. Maecenas sit amet aliquam ante. Praesent aliquet mi a risus venenatis aliquam. Fusce tristique ut elit in hendrerit. Nulla ut diam tellus. Nam sed tincidunt quam. Vestibulum felis sem, malesuada a risus luctus, tincidunt viverra est.</p>"
+	},
+	"children": [{
+			"name": "Speaker",
+			"size": 0,
+			"fillColor": "transparent",
+			"strokeColor": "transparent",
+			"linkColor": "#b75ff5",
+      "content":{
+        "__html":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor tempus est id vestibulum. Nullam tincidunt luctus ligula at lacinia. Maecenas sit amet aliquam ante. Praesent aliquet mi a risus venenatis aliquam. Fusce tristique ut elit in hendrerit. Nulla ut diam tellus. Nam sed tincidunt quam. Vestibulum felis sem, malesuada a risus luctus, tincidunt viverra est.<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor tempus est id vestibulum </p><p>Visualization by Steph on Shiny.io: <iframe src='https://stephbuon.shinyapps.io/words_per_day_top_speakers/'></iframe></p>"
+      },
+			"children": [{
+					"name": "Party",
+					"size": 0,
+					"strokeColor": "transparent",
+					"linkColor": "#b75ff5",
+					"children": [{
+						"name": "Change Over Time",
+						"size": 0,
+						"strokeColor": "transparent",
+						"linkColor": "#b75ff5"
+					}, {
+						"name": "Favorite Topics",
+						"size": 0,
+						"strokeColor": "transparent",
+						"linkColor": "#b75ff5"
+					}, {
+						"name": "Favorite Words",
+						"size": 0,
+						"strokeColor": "transparent",
+						"linkColor": "#b75ff5",
+						"children": [{
+								"name": "Favorite Emotions",
+								"size": 0,
+								"strokeColor": "transparent",
+								"linkColor": "#b75ff5"
+							},
+							{
+								"name": "Favorite Ideas",
+								"size": 0,
+								"strokeColor": "transparent",
+								"linkColor": "#b75ff5"
+							},
+							{
+								"name": "Worldview",
+								"size": 0,
+								"strokeColor": "transparent",
+								"linkColor": "#b75ff5"
+							}
+						]
+					}]
+				},
+				{
+					"name": "Constituency",
+					"size": 0,
+					"strokeColor": "transparent",
+					"linkColor": "#b75ff5",
+					"children": [{
+							"name": "Geography",
+							"size": 0,
+							"strokeColor": "transparent",
+							"linkColor": "#b75ff5"
+						},
+						{
+							"name": "Income",
+							"size": 0,
+							"strokeColor": "transparent",
+							"linkColor": "#b75ff5"
+						},
+						{
+							"name": "Statistical Divergence",
+							"size": 0,
+							"strokeColor": "transparent",
+							"linkColor": "#b75ff5"
+						},
+						{
+							"name": "Change over Time",
+							"size": 0,
+							"strokeColor": "transparent",
+							"linkColor": "#b75ff5"
+						}
+					]
+				},
+				{
+					"name": "Favorite Words",
+					"size": 0,
+					"strokeColor": "transparent",
+					"linkColor": "#b75ff5",
+					"children": [{
+							"name": "Favorite Emotions",
+							"size": 0,
+							"strokeColor": "transparent",
+							"linkColor": "#b75ff5"
+						},
+						{
+							"name": "Favorite Ideas",
+							"size": 0,
+							"strokeColor": "transparent",
+							"linkColor": "#b75ff5"
+						},
+						{
+							"name": "Worldview",
+							"size": 0,
+							"strokeColor": "transparent",
+							"linkColor": "#b75ff5"
+						}
+					]
+				},
+				{
+					"name": "Change Over Time",
+					"size": 0,
+					"strokeColor": "transparent",
+					"linkColor": "#b75ff5"
+				}
+			]
+		},
+		{
+			"name": "Speechdate",
+			"size": 0,
+			"strokeColor": "transparent",
+			"linkColor": "#5fbffe",
+			"children": [{
+					"name": "month",
+					"strokeColor": "transparent",
+					"linkColor": "#5fbffe",
+					"children": [{
+						"name": "Statistical Divergence",
+						"strokeColor": "transparent",
+						"linkColor": "#5fbffe"
+					}]
+				},
+				{
+					"name": "year",
+					"strokeColor": "transparent",
+					"linkColor": "#5fbffe",
+					"children": [{
+						"name": "Statistical Divergence",
+						"strokeColor": "transparent",
+						"linkColor": "#5fbffe"
+					}]
+				}
+			]
+		},
+		{
+			"name": "Debate",
+			"size": 0,
+			"strokeColor": "transparent",
+			"linkColor": "#f6c50f",
+			"children": [{
+					"name": "Speech",
+					"size": 0,
+					"strokeColor": "transparent",
+					"linkColor": "#f6c50f"
+				},
+				{
+					"name": "Sentence",
+					"size": 0,
+					"strokeColor": "transparent",
+					"linkColor": "#f6c50f",
+					"children": [{
+						"name": "Grammatical Triples",
+						"size": 0,
+						"strokeColor": "transparent",
+						"linkColor": "#f6c50f"
+					}, {
+						"name": "Lexicon",
+						"size": 0,
+						"strokeColor": "transparent",
+						"linkColor": "#f6c50f"
+					}]
+				}
+			]
+		}
+	]
+}]

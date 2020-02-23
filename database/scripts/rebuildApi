@@ -1,0 +1,31 @@
+#!/bin/sh
+# Stats the .env file in the parent dir
+LOGFILE="rebuildAPI.log"
+echo "Rebuilding, logging to: $LOGFILE..."
+
+exec 3>&1 4>&2
+trap 'exec 2>&4 1>&3' 0 1 2 3
+exec 1>$LOGFILE 2>&1
+
+set -o allexport
+[[ -f ../../.env ]] && source ../../.env
+set +o allexport
+export PGPASSWORD=$DATABASE_PASS
+
+echo "\n00_debate.sql ---------------------------------------------------------------------------------------------"
+psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < ../api/00_debate.sql
+
+#echo "\n01_debate.sql ---------------------------------------------------------------------------------------------"
+#psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < ../api/01_misspelled.sql
+
+#echo "\n02_vocab.sql ---------------------------------------------------------------------------------------------"
+#psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < ../api/02_vocab.sql
+
+#echo "\n03_top_speakers.sql --------------------------------------------------------------------------------------"
+#psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < ../api/03_top_speakers.sql
+
+#echo "\n04_frequncyCounts ----------------------------------------------------------------------------------------"
+#psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < ../api/04_frequncyCounts
+
+echo "\n99_indexes.sql -------------------------------------------------------------------------------------------"
+psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < ../api/99_indexes.sql

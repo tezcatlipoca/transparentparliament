@@ -1,0 +1,14 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One&display=swap');
+@import 'https://use.fontawesome.com/releases/v5.6.3/css/all.css';
+
+
+body {
+  background-image: linear-gradient(90deg, #eff3ff, #cccccc);
+}
+
+hr {
+  border: 0.4px solid grey;
+  border-radius: 5px;
+}

@@ -1,0 +1,55 @@
+.container {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.headline {
+  position: absolute;
+  width: 100vw;
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 50rem;
+  color: rgba(16, 16, 13, 0.08);
+  width: calc(100vw + 3rem);
+  height: 80rem;
+  overflow: hidden;
+  margin: 0 0 0 -3rem;
+  line-height: 2rem;
+}
+
+h1,
+h2 {
+  font-family: 'Sigmar One', sans-serif;
+  font-size: 1.5rem;
+}
+
+.midline {
+  font-family: 'Sigmar One', sans-serif;
+  position: absolute;
+  z-index: 1;
+  background: #fb6a4a;
+  color: white;
+  font-size: 5rem;
+  line-height: 5rem;
+  width: 100vw;
+  text-align: center;
+  top: 10rem;
+  left: 0;
+  padding: 0.3rem;
+  margin: 0 0 0rem 0;
+  opacity: 0.8;
+  min-width: 50rem;
+}
+
+.content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  top: 24rem;
+  width: 50rem;
+  margin: 0 auto 0 auto;
+  font-size: 1rem;
+  line-height: 2rem;
+}

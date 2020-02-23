@@ -1,0 +1,9 @@
+{
+  "extends": ["plugin:prettier/recommended"],
+  "plugins": ["react", "jsx-a11y", "import", "prettier"],
+  "parser": "babel-eslint",
+  "rules": {
+    "prettier/prettier": "error",
+    "no-debugger": "off"
+  }
+}

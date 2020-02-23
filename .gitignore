@@ -1,0 +1,16 @@
+.env
+.DS_Store
+.pnp.js
+/.pnp
+/coverage
+/node_modules
+build
+node_modules
+npm-debug.log*
+TMP
+yarn-debug.log*
+yarn-error.log*
+backup.db
+database/data/*.csv
+database/data/*.tsv
+database/data/**/*.sql

@@ -1,0 +1,91 @@
+
+00_debate.sql ---------------------------------------------------------------------------------------------
+GRANT ROLE
+GRANT
+NOTICE:  view "debate" does not exist, skipping
+DROP VIEW
+ERROR:  relation "private.debate_category" does not exist
+LINE 20:          JOIN private.debate_category ON debate_category.id ...
+                       ^
+ERROR:  relation "api.debate" does not exist
+
+01_debate.sql ---------------------------------------------------------------------------------------------
+NOTICE:  materialized view "member_names_mispelled_words" does not exist, skipping
+DROP MATERIALIZED VIEW
+ERROR:  relation "private.debate_name" does not exist
+LINE 8:          JOIN private.debate_name ON debate_name.id = debate...
+                      ^
+ERROR:  relation "api.member_names_mispelled_words" does not exist
+
+02_vocab.sql ---------------------------------------------------------------------------------------------
+NOTICE:  view "vocab_classes" does not exist, skipping
+DROP VIEW
+ERROR:  relation "private.vocab_classes" does not exist
+LINE 3: FROM private.vocab_classes;
+             ^
+ERROR:  relation "api.vocab_classes" does not exist
+NOTICE:  view "vocab_concerns" does not exist, skipping
+DROP VIEW
+ERROR:  relation "private.vocab_concerns" does not exist
+LINE 3: FROM private.vocab_concerns;
+             ^
+ERROR:  relation "api.vocab_concerns" does not exist
+NOTICE:  view "vocab_dp" does not exist, skipping
+DROP VIEW
+ERROR:  relation "private.vocab_dp" does not exist
+LINE 3: FROM private.vocab_dp;
+             ^
+ERROR:  relation "api.vocab_dp" does not exist
+NOTICE:  view "vocab_eminent_domain" does not exist, skipping
+DROP VIEW
+ERROR:  relation "private.vocab_eminent_domain" does not exist
+LINE 3: FROM private.vocab_eminent_domain;
+             ^
+ERROR:  relation "api.vocab_eminent_domain" does not exist
+NOTICE:  view "vocab_infrastructure" does not exist, skipping
+DROP VIEW
+ERROR:  relation "private.vocab_infrastructure" does not exist
+LINE 3: FROM private.vocab_infrastructure;
+             ^
+ERROR:  relation "api.vocab_infrastructure" does not exist
+NOTICE:  view "vocab_offices" does not exist, skipping
+DROP VIEW
+ERROR:  relation "private.vocab_offices" does not exist
+LINE 3: FROM private.vocab_offices;
+             ^
+ERROR:  relation "api.vocab_offices" does not exist
+NOTICE:  view "vocab_rights_of_common" does not exist, skipping
+DROP VIEW
+ERROR:  relation "private.vocab_rights_of_common" does not exist
+LINE 3: FROM private.vocab_rights_of_common;
+             ^
+ERROR:  relation "api.vocab_rights_of_common" does not exist
+
+03_top_speakers.sql --------------------------------------------------------------------------------------
+NOTICE:  materialized view "top_speakers" does not exist, skipping
+DROP MATERIALIZED VIEW
+ERROR:  relation "api.member_names_mispelled_words" does not exist
+LINE 5: FROM api.member_names_mispelled_words
+             ^
+ERROR:  relation "api.top_speakers" does not exist
+NOTICE:  view "top_speaker_per_year" does not exist, skipping
+DROP VIEW
+ERROR:  relation "api.top_speakers" does not exist
+LINE 5: FROM api.top_speakers
+             ^
+ERROR:  relation "api.top_speaker_per_year" does not exist
+
+04_frequncyCounts ----------------------------------------------------------------------------------------
+./rebuildApi: line 28: ../api/04_frequncyCounts: No such file or directory
+
+99_indexes.sql -------------------------------------------------------------------------------------------
+ERROR:  column "debate_errata" does not exist
+ERROR:  column "debate_date" does not exist
+ERROR:  column "debate_section" does not exist
+ERROR:  column "debate_sentence" does not exist
+ERROR:  column "debate_house" does not exist
+ERROR:  column "debate_image" does not exist
+ERROR:  column "debate_constituency" does not exist
+ERROR:  column "fulltext" does not exist
+LINE 1: ...ate.debate_text USING GIN (to_tsvector('english', fulltext))...
+                                                             ^

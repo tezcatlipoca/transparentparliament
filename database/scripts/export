@@ -1,0 +1,11 @@
+#!/bin/sh
+# Stats the .env file in the parent dir
+set -o allexport
+[[ -f ../../.env ]] && source ../../.env
+set +o allexport
+OUTPUT_PATH="$DATA_EXPORT_DIRECTORY/databaseExport_$(date '+%m_%d_%Y-%H-%M-%S').sql"
+mkdir -p $DATA_EXPORT_DIRECTORY
+echo "Exporting to: $OUTPUT_PATH"
+export PGPASSWORD=$DATABASE_PASS
+$DATABASE_PG_DUMP -h $DATABASE_SERVER -p $DATABASE_PORT -U $DATABASE_USERNAME $DATABASE_DB > $OUTPUT_PATH
+echo DONE!

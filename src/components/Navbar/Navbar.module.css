@@ -1,0 +1,45 @@
+.container {
+  font-family: 'Open Sans', sans-serif;
+  position: fixed;
+  z-index: 10;
+  color: white;
+  width: 100vw;
+  height: 2rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  top:0;
+  background-color: #fb6a4a;
+  margin:0;
+  left:0;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+
+:global(a:link),:global(a:visited) {
+  opacity: .9;
+  text-decoration: none;
+  color:white;
+  font-weight: 900;
+}
+
+:global(:link:hover){
+  opacity: 0.5;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.fadein {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

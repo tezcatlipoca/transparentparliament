@@ -1,0 +1,17 @@
+.exportButtonGroup {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  top:5rem;
+  left: -2.5rem;
+}
+
+.exportButtons {
+  margin: 0 0 0 auto;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 5rem;
+}

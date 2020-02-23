@@ -1,0 +1,40 @@
+.buttonBorderless,
+.button {
+  z-index: 1;
+  text-align: center;
+  color: #999999;
+  padding: .5rem;
+  background-color: #d0d0d0;
+  border-radius: 0.3rem;
+  border: 1px solid #00000022;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  margin: -0.1rem 0.2rem 0 0.2rem;
+}
+
+.buttonBorderless {
+  color: white;
+  padding:.2rem;
+}
+
+.buttonBorderless {
+  background-color: transparent;
+  border: 0px;
+}
+
+.buttonBorderless:hover,
+.button:hover {
+  opacity: 0.7;
+}
+
+.disabled,
+.disabled:hover {
+  border: 1px solid #d0d0d0;
+  color: #00000022;
+  opacity: 1;
+}
+
+.alternate {
+  color: #54818c;
+}
