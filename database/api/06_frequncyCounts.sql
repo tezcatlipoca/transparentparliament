@@ -1,7 +1,7 @@
 DROP MATERIALIZED VIEW IF EXISTS api.wordcount;
 CREATE MATERIALIZED VIEW api.wordcount AS
 SELECT *
-from ts_stat('select to_tsvector(fulltext) FROM private.debate_text')
+from ts_stat('select to_tsvector(val) FROM private.debate_text')
 ORDER BY nentry;
 
 GRANT ALL PRIVILEGES ON api.wordcount TO web_anon;

@@ -10,7 +10,11 @@ echo "$PWD/../TMP/$(basename $DATA_RAW_SOURCE)/* $DATABASE_SSH_LOGIN:$DATABASE_R
 rsync -azvr --delete --progress $PWD/../TMP/$(basename $DATA_RAW_SOURCE)/* $DATABASE_SSH_LOGIN:$DATABASE_REMOTE_DATA_DIR
 
 export PGPASSWORD=$DATABASE_PASS
+echo "\n----- Setting JWT Secret -----------------------------"
+psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME -c "ALTER DATABASE $DATABASE_DB SET app.jwt_secret TO '$JWT_SECRET'"
+
 echo "\n----- Dropping Everything ----------------------------"
 psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < dropall.sql
+
 echo "\n----- BUILD_DATABASE ---------------------------------"
 psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < $PWD/../TMP/$(basename $DATA_RAW_SOURCE)/BUILD_DATABASE.sql

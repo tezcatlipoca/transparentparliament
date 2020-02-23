@@ -1,6 +1,6 @@
 DROP MATERIALIZED VIEW IF EXISTS api.top_speakers;
 CREATE MATERIALIZED VIEW api.top_speakers AS
-SELECT extract(year from debate_date::TIMESTAMP) as date_year,
+SELECT extract(year from speechdate::TIMESTAMP) as date_year,
        speaker_name,
        sum(number_of_words) as words_spoken
 FROM api.member_names_mispelled_words
