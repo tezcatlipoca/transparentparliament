@@ -8,9 +8,7 @@ import styles from './Explore.module.css';
 export default class Explore extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentNode: { data: facets[0], breadcrumbs: [facets[0].name] }
-    };
+    this.state = { currentNode: null };
     this.m_onNodeChange = memoizeOne(node => {
       if (node) {
         this.props.history.push(this.breadcrumbsToUrl(node.breadcrumbs));
@@ -21,7 +19,7 @@ export default class Explore extends React.Component {
   findNodeByPath = (path, node, depth) => {
     if (!path) return;
     let parsedPath = path.split('/');
-    parsedPath = parsedPath.splice(1, parsedPath.length);
+
     let thisNode;
     if (!node) {
       node = facets.find(
@@ -39,7 +37,7 @@ export default class Explore extends React.Component {
     if (depth + 1 < parsedPath.length) {
       this.findNodeByPath(path, thisNode, depth + 1);
     } else {
-      if (this.state.currentNode.data.name !== thisNode.name) {
+      if (this.state.currentNode?.data.name !== thisNode.name) {
         this.setState({
           currentNode: { data: thisNode, breadcrumbs: path.split('/') }
         });
@@ -47,12 +45,28 @@ export default class Explore extends React.Component {
     }
   };
 
+  componentDidMount() {
+    this.checkPath();
+  }
+
   componentDidUpdate() {
-    this.findNodeByPath(window.location.href.split('#')[1], null, 0);
+    this.checkPath();
+  }
+
+  checkPath() {
+    console.log(`Checking: ${window.location.href}`);
+    this.findNodeByPath(
+      window.location.href.split('explore/')[1].length > 0
+        ? window.location.href.split('explore/')[1]
+        : facets[0].name.replace(/ /g, '_').toLowerCase(),
+      null,
+      0
+    );
   }
 
   render() {
     this.m_onNodeChange(this.state.currentNode);
+    if (!this.state.currentNode) return null;
     return (
       <div className={styles.content}>
         {this.state.currentNode && (
@@ -97,6 +111,6 @@ export default class Explore extends React.Component {
       .join('/')
       .replace(/ /g, '_')
       .toLowerCase();
-    return `/explore/#/${parsedPath}`;
+    return `/explore/${parsedPath}`;
   };
 }
