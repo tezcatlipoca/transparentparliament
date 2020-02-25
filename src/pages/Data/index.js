@@ -16,7 +16,6 @@ class Data extends React.Component {
   };
 
   render() {
-    console.log(this.props.reduxState);
     return (
       <div className={styles.content}>
         <div>

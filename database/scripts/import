@@ -1,0 +1,15 @@
+#!/bin/sh
+# Stats the .env file in the parent dir
+set -o allexport
+[[ -f ../../.env ]] && source ../../.env
+set +o allexport
+echo "Importing: $1"
+export PGPASSWORD=$DATABASE_PASS
+
+echo "\n----- Dropping Everything ----------------------------"
+psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < dropall.sql
+
+echo "\n----- BUILD_DATABASE ---------------------------------"
+psql -h $DATABASE_SERVER -p $DATABASE_PORT -d $DATABASE_DB -U $DATABASE_USERNAME < $1
+
+echo DONE!

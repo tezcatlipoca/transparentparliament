@@ -17,8 +17,41 @@ export default class Explore extends React.Component {
       }
     });
   }
+
+  findNodeByPath = (path, node, depth) => {
+    if (!path) return;
+    let parsedPath = path.split('/');
+    parsedPath = parsedPath.splice(1, parsedPath.length);
+    let thisNode;
+    if (!node) {
+      node = facets.find(
+        facet =>
+          facet.name.replace(/ /g, '_').toLowerCase() === parsedPath[depth]
+      );
+      thisNode = node;
+    } else {
+      thisNode = node.children.find(
+        facet =>
+          facet.name.replace(/ /g, '_').toLowerCase() === parsedPath[depth]
+      );
+    }
+
+    if (depth + 1 < parsedPath.length) {
+      this.findNodeByPath(path, thisNode, depth + 1);
+    } else {
+      if (this.state.currentNode.data.name !== thisNode.name) {
+        this.setState({
+          currentNode: { data: thisNode, breadcrumbs: path.split('/') }
+        });
+      }
+    }
+  };
+
+  componentDidUpdate() {
+    this.findNodeByPath(window.location.href.split('#')[1], null, 0);
+  }
+
   render() {
-    console.log(this.state.currentNode);
     this.m_onNodeChange(this.state.currentNode);
     return (
       <div className={styles.content}>
@@ -59,6 +92,7 @@ export default class Explore extends React.Component {
   }
 
   breadcrumbsToUrl = breadcrumbs => {
+    if (!breadcrumbs) return;
     let parsedPath = breadcrumbs
       .join('/')
       .replace(/ /g, '_')

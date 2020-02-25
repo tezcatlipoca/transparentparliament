@@ -16,7 +16,6 @@ class About extends React.Component {
   };
 
   render() {
-    console.log(this.props.reduxState);
     return (
       <div className={styles.content}>
         <div>
@@ -70,25 +69,6 @@ class About extends React.Component {
             scelerisque venenatis. Donec vestibulum nec purus vel pellentesque.
             Aenean mauris ipsum, egestas id semper at, placerat eget quam.
           </p>
-          {this.fileListing('classes.csv', 99999)}
-          {this.fileListing('collaborative_cities.csv', 99999)}
-          {this.fileListing('collaborative_nations.csv', 99999)}
-          {this.fileListing('concerns.csv', 99999)}
-          {this.fileListing('hansard_justnine_12192019.csv', 99999)}
-          {this.fileListing('nation_pairs_in_titles.csv', 99999)}
-          {this.fileListing('offices.csv', 99999)}
-          {this.fileListing('phenomenadict.csv', 99999)}
-          {this.fileListing('slavery.csv', 99999)}
-          {this.fileListing('speakers_data_02062020.csv', 99999)}
-          {this.fileListing('tokenized_hansard.csv', 99999)}
-          {this.fileListing('total_nations_counts_in_debate_titles.csv', 99999)}
-          {this.fileListing('traitdict.csv', 99999)}
-          {this.fileListing(
-            'unlemmatized_sentencecounts_withyear_0192020.csv',
-            99999
-          )}
-          {this.fileListing('wordnet-phenomena.csv', 99999)}
-          {this.fileListing('wordnet-traits.csv', 99999)}
         </div>
       </div>
     );

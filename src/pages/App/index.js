@@ -4,9 +4,9 @@ import Index from 'pages/Index';
 import Explore from 'pages/Explore';
 import About from 'pages/About';
 import Navbar from 'components/Navbar';
+import Data from 'pages/Data';
 import configureStore from 'state/configure-store';
 import { Provider } from 'react-redux';
-
 const store = configureStore();
 
 function App() {
@@ -14,9 +14,10 @@ function App() {
     <Provider store={store}>
       <Router>
         <Navbar />
-        <Route path="/" exact component={Index} />
-        <Route path="/explore/" component={Explore} />
-        <Route path="/about/" component={About} />
+        <Route path={'/'} exact component={Index} />
+        <Route path={'/explore/'} component={Explore} />
+        <Route path={'/about/'} component={About} />
+        <Route path={'/data/'} component={Data} />
       </Router>
     </Provider>
   );

@@ -28,6 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "db:export": "cd ./database/scripts; ./export",
+    "db:import": "cd ./database/scripts; ./import",
     "db:rebuild": "cd ./database/scripts;./rebuildDatabase",
     "db:rebuildapi": "cd ./database/scripts;./rebuildApi",
     "db:preprocess": "cd ./database/scripts;./preprocessAndGenerate",

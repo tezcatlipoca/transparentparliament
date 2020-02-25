@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
+
 export default class Navbar extends React.Component {
   componentDidMount() {
     //  let navEl = document.getElementById('navbar');
@@ -21,6 +22,10 @@ export default class Navbar extends React.Component {
         |{' '}
         <Link to="/about">
           <span className="fas fa-info-circle icon" /> about
+        </Link>{' '}
+        |{' '}
+        <Link to="/data">
+          <span className="fas fa-save icon" /> data
         </Link>
       </div>
     );

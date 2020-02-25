@@ -1,4 +1,5 @@
 .docz
+*.gz
 .env
 .DS_Store
 .pnp.js
