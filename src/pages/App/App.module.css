@@ -19,11 +19,11 @@
 }
 h1,
 h2 {
-  font-family: 'Sigmar One', cursive;
+  font-family: 'Playfair Display', cursive;
   font-size: 1.5rem;
 }
 .midline {
-  font-family: 'Sigmar One', cursive;
+  font-family: 'Playfair Display', cursive;
   position: absolute;
   z-index: 1;
   background: #fb6a4a;

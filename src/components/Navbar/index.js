@@ -15,7 +15,7 @@ export default class Navbar extends React.Component {
           <span className="fas fa-home icon" /> home
         </Link>{' '}
         |
-        <Link to="/explore">
+        <Link to="/explore/">
           {' '}
           <span className="fas fa-map icon" /> explore
         </Link>{' '}

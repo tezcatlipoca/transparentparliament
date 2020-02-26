@@ -21,12 +21,12 @@
 
 h1,
 h2 {
-  font-family: 'Sigmar One', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   font-size: 1.5rem;
 }
 
 .midline {
-  font-family: 'Sigmar One', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   position: absolute;
   z-index: 1;
   background: #fb6a4a;

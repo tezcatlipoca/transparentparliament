@@ -5,7 +5,7 @@
 	"fillColor": "#5fbffe",
 	"linkColor": "#000000",
 	"content": {
-		"__html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor tempus est id vestibulum. Nullam tincidunt luctus ligula at lacinia. Maecenas sit amet aliquam ante. Praesent aliquet mi a risus venenatis aliquam. Fusce tristique ut elit in hendrerit. Nulla ut diam tellus. Nam sed tincidunt quam. Vestibulum felis sem, malesuada a risus luctus, tincidunt viverra est.<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor tempus est id vestibulum. Nullam tincidunt luctus ligula at lacinia. Maecenas sit amet aliquam ante. Praesent aliquet mi a risus venenatis aliquam. Fusce tristique ut elit in hendrerit. Nulla ut diam tellus. Nam sed tincidunt quam. Vestibulum felis sem, malesuada a risus luctus, tincidunt viverra est.</p>"
+		"__html": ""
 	},
 	"children": [{
 			"name": "Speaker",
@@ -14,7 +14,7 @@
 			"strokeColor": "transparent",
 			"linkColor": "#b75ff5",
       "content":{
-        "__html":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor tempus est id vestibulum. Nullam tincidunt luctus ligula at lacinia. Maecenas sit amet aliquam ante. Praesent aliquet mi a risus venenatis aliquam. Fusce tristique ut elit in hendrerit. Nulla ut diam tellus. Nam sed tincidunt quam. Vestibulum felis sem, malesuada a risus luctus, tincidunt viverra est.<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor tempus est id vestibulum </p><p>Visualization by Steph on Shiny.io: <iframe src='https://stephbuon.shinyapps.io/words_per_day_top_speakers/'></iframe></p>"
+        "__html":"<iframe src='https://stephbuon.shinyapps.io/words_per_day_top_speakers/'></iframe>"
       },
 			"children": [{
 					"name": "Party",

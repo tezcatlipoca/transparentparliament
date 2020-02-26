@@ -23,52 +23,9 @@ class About extends React.Component {
         </div>
 
         <div>
-          <p>
-            {' '}
-            <a href="https://docs.democracylab.io/docs/welcome.html">
-              documention
-            </a>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            auctor tempus est id vestibulum. Nullam tincidunt luctus ligula at
-            lacinia. Maecenas sit amet aliquam ante. Praesent aliquet mi a risus
-            venenatis aliquam. Fusce tristique ut elit in hendrerit. Nulla ut
-            diam tellus. Nam sed tincidunt quam. Vestibulum felis sem, malesuada
-            a risus luctus, tincidunt viverra est.
-          </p>
-          <p>
-            In at malesuada erat, at ultricies lacus. Vivamus ac eros tempor,
-            viverra dui sit amet, convallis urna. Ut vitae tellus nec sapien
-            vulputate aliquam quis in purus. Proin eleifend enim lectus,
-            tincidunt tristique tortor gravida eu. Aliquam nulla mi, bibendum id
-            tempus non, aliquam eu ante. In sed orci nec libero imperdiet
-            fermentum vitae vel nisi. Ut ullamcorper, quam at congue mattis,
-            purus felis vulputate neque, at pretium sapien tortor ac justo. Nunc
-            vel tortor elementum, sollicitudin justo sed, viverra augue. Cras
-            consectetur ullamcorper ante ut mattis. Donec finibus purus et ante
-            tristique mattis. Donec mollis ligula eu sapien euismod, non
-            molestie nisl pretium. Maecenas leo sem, faucibus sed dictum a,
-            tincidunt quis nibh. Aliquam eget velit tempor, sollicitudin sem
-            vel, consequat sem. Praesent ac augue sed augue vehicula aliquam sit
-            amet et lacus. Suspendisse sodales, massa in vulputate porta, justo
-            felis ornare risus, sit amet iaculis orci purus in lacus. Nulla
-            facilisi. Nunc pulvinar ultrices finibus. Mauris ipsum sem, porta
-            eget tincidunt vel, egestas quis metus. Nam orci enim, eleifend sit
-            amet auctor sed, viverra ut felis. Mauris vehicula vel dui id
-            faucibus. Interdum et malesuada fames ac ante ipsum primis in
-            faucibus. In id felis justo. Praesent tempor, risus a tempor
-            tristique, nibh lacus ultricies diam, sit amet accumsan lorem enim
-            in ante.
-          </p>
-          <p>
-            Vestibulum iaculis lorem vel lorem fringilla venenatis. Pellentesque
-            quis scelerisque lorem, sit amet euismod nisl. Proin porta, lorem
-            sit amet mollis malesuada, justo sem auctor erat, ut euismod arcu
-            sapien ut dui. Mauris et pulvinar sapien. Integer pulvinar luctus
-            ipsum, eget porta sapien lacinia eget. Etiam consectetur turpis eu
-            erat sodales, et sodales ipsum volutpat. Morbi ornare dui sed
-            scelerisque venenatis. Donec vestibulum nec purus vel pellentesque.
-            Aenean mauris ipsum, egestas id semper at, placerat eget quam.
-          </p>
+          <a href="https://docs.democracylab.io/docs/welcome.html">
+            documention
+          </a>
         </div>
       </div>
     );

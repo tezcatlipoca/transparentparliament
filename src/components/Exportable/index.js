@@ -62,21 +62,7 @@ export default class Exportable extends React.Component {
               >
                 <View style={pdfStyles.view}>
                   <Text>Facets of Parliamentary Speech</Text>
-                  <Text style={pdfStyles.bodyCopy}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus auctor tempus est id vestibulum. Nullam tincidunt
-                    luctus ligula at lacinia. Maecenas sit amet aliquam ante.
-                    Praesent aliquet mi a risus venenatis aliquam. Fusce
-                    tristique ut elit in hendrerit. Nulla ut diam tellus. Nam
-                    sed tincidunt quam. Vestibulum felis sem, malesuada a risus
-                    luctus, tincidunt viverra est. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Phasellus auctor tempus est id
-                    vestibulum. Nullam tincidunt luctus ligula at lacinia.
-                    Maecenas sit amet aliquam ante. Praesent aliquet mi a risus
-                    venenatis aliquam. Fusce tristique ut elit in hendrerit.
-                    Nulla ut diam tellus. Nam sed tincidunt quam. Vestibulum
-                    felis sem, malesuada a risus luctus, tincidunt viverra est.
-                  </Text>
+                  <Text style={pdfStyles.bodyCopy}></Text>
                 </View>
               </Page>
               <Page

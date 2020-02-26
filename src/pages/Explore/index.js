@@ -2,70 +2,15 @@ import React from 'react';
 import Tree from 'components/D3/Tree';
 import Exportable from 'components/Exportable';
 import facets from 'data/facets.json';
-import memoizeOne from 'memoize-one';
 import styles from './Explore.module.css';
+import PropTypes from 'prop-types';
 
-export default class Explore extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { currentNode: null };
-    this.m_onNodeChange = memoizeOne(node => {
-      if (node) {
-        this.props.history.push(this.breadcrumbsToUrl(node.breadcrumbs));
-      }
-    });
-  }
-
-  findNodeByPath = (path, node, depth) => {
-    if (!path) return;
-    let parsedPath = path.split('/');
-
-    let thisNode;
-    if (!node) {
-      node = facets.find(
-        facet =>
-          facet.name.replace(/ /g, '_').toLowerCase() === parsedPath[depth]
-      );
-      thisNode = node;
-    } else {
-      thisNode = node.children.find(
-        facet =>
-          facet.name.replace(/ /g, '_').toLowerCase() === parsedPath[depth]
-      );
-    }
-
-    if (depth + 1 < parsedPath.length) {
-      this.findNodeByPath(path, thisNode, depth + 1);
-    } else {
-      if (this.state.currentNode?.data.name !== thisNode.name) {
-        this.setState({
-          currentNode: { data: thisNode, breadcrumbs: path.split('/') }
-        });
-      }
-    }
-  };
-
-  componentDidMount() {
-    this.checkPath();
-  }
-
-  componentDidUpdate() {
-    this.checkPath();
-  }
-
-  checkPath() {
-    console.log(`Checking: ${window.location.href}`);
-    this.findNodeByPath(
-      window.location.href.split('explore/')[1].length > 0
-        ? window.location.href.split('explore/')[1]
-        : facets[0].name.replace(/ /g, '_').toLowerCase(),
-      null,
-      0
-    );
-  }
+class Explore extends React.Component {
+  state = { currentNode: null };
+  componentDidMount = () => this.setNodeFromURL();
+  componentDidUpdate = () => this.setNodeFromURL();
 
   render() {
-    this.m_onNodeChange(this.state.currentNode);
     if (!this.state.currentNode) return null;
     return (
       <div className={styles.content}>
@@ -75,7 +20,9 @@ export default class Explore extends React.Component {
               className={styles.breadcrumbs}
               style={{ color: this.state.currentNode.data.linkColor }}
             >
-              {this.state.currentNode.breadcrumbs.join(' >> ')}
+              {this.state.currentNode.breadcrumbs
+                .join(` >> `)
+                .replace(/_/g, ' ')}
             </div>
             <div className={styles.title}>
               {this.state.currentNode.data.name}
@@ -91,7 +38,9 @@ export default class Explore extends React.Component {
                 console.log(link);
               }}
               onNodeClick={node => {
-                this.setState({ currentNode: node });
+                this.props.history.push(
+                  this.breadcrumbsToUrl(node.breadcrumbs)
+                );
               }}
               data={facets}
             />
@@ -113,4 +62,51 @@ export default class Explore extends React.Component {
       .toLowerCase();
     return `/explore/${parsedPath}`;
   };
+
+  setNodeFromURL = () => {
+    const parsedURL = window.location.href.split('explore/')[1];
+    this.findNodeByPath(
+      parsedURL && parsedURL.length > 0
+        ? parsedURL
+        : facets[0].name.replace(/ /g, '_').toLowerCase(),
+      null,
+      (node, path) => {
+        if (this.state.currentNode?.data.name !== node.name) {
+          this.setState({
+            currentNode: { data: node, breadcrumbs: path.split('/') }
+          });
+        }
+      }
+    );
+  };
+
+  findNodeByPath = (path, parentNode, cb, depth = 0) => {
+    if (!path) return;
+    let parsedPath = path.split('/');
+    let node;
+    if (!parentNode) {
+      parentNode = facets.find(
+        facet =>
+          facet.name.replace(/ /g, '_').toLowerCase() === parsedPath[depth]
+      );
+      node = parentNode;
+    } else {
+      node = parentNode.children.find(
+        facet =>
+          facet.name.replace(/ /g, '_').toLowerCase() === parsedPath[depth]
+      );
+    }
+    const nextInPath = depth + 1;
+    if (nextInPath < parsedPath.length && parsedPath[nextInPath].length > 0) {
+      this.findNodeByPath(path, node, cb, nextInPath);
+    } else {
+      if (typeof cb === 'function') cb(node, path);
+    }
+  };
 }
+
+Explore.propTypes = {
+  history: PropTypes.object
+};
+
+export default Explore;
