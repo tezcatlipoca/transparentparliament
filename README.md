@@ -93,3 +93,8 @@ Documentation is generated using docz. From the docz docs:
 
 >Deploy
 The output of docz consists of static assets only. This allows you to deploy your generated docz site with any static site hosting provider you'd like. Start by building your site with `yarn docz build`, if you haven't provided a dest flag to your config then you will find your generated files in .docz/dist that you can copy to your server to deploy your site.
+
+## Colors
+Brewer Pallettes safe for deuteranopic color blindness adapted from: http://mkweb.bcgsc.ca/colorblind/ specifcially "15-color palettes adapted for color blindness."
+
+See also: http://mkweb.bcgsc.ca/brewer/swatches/brewer.txt

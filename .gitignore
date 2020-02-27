@@ -16,3 +16,4 @@ backup.db
 database/data/*.csv
 database/data/*.tsv
 database/data/**/*.sql
+buildAndDeploy

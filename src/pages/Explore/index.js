@@ -1,9 +1,9 @@
 import React from 'react';
 import Tree from 'components/D3/Tree';
 import Exportable from 'components/Exportable';
-import facets from 'data/facets.json';
 import styles from './Explore.module.css';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class Explore extends React.Component {
   state = { currentNode: null };
@@ -30,7 +30,10 @@ class Explore extends React.Component {
           </div>
         )}
         <div style={{ margin: '5rem, 0,0,0' }}>
-          <Exportable fileName="facetsOfParliamentarySpeech" data={facets}>
+          <Exportable
+            fileName="facetsOfParliamentarySpeech"
+            data={this.props.reduxState.data.facets}
+          >
             <Tree
               disableRender={true}
               backgroundColor={'#FFFFFF55'}
@@ -42,7 +45,7 @@ class Explore extends React.Component {
                   this.breadcrumbsToUrl(node.breadcrumbs)
                 );
               }}
-              data={facets}
+              data={this.props.reduxState.data.facets}
             />
           </Exportable>
         </div>
@@ -68,7 +71,9 @@ class Explore extends React.Component {
     this.findNodeByPath(
       parsedURL && parsedURL.length > 0
         ? parsedURL
-        : facets[0].name.replace(/ /g, '_').toLowerCase(),
+        : this.props.reduxState.data.facets[0].name
+            .replace(/ /g, '_')
+            .toLowerCase(),
       null,
       (node, path) => {
         if (this.state.currentNode?.data.name !== node.name) {
@@ -85,7 +90,7 @@ class Explore extends React.Component {
     let parsedPath = path.split('/');
     let node;
     if (!parentNode) {
-      parentNode = facets.find(
+      parentNode = this.props.reduxState.data.facets.find(
         facet =>
           facet.name.replace(/ /g, '_').toLowerCase() === parsedPath[depth]
       );
@@ -106,7 +111,12 @@ class Explore extends React.Component {
 }
 
 Explore.propTypes = {
+  reduxState: PropTypes.object,
   history: PropTypes.object
 };
 
-export default Explore;
+export default connect(reduxState => {
+  return {
+    reduxState
+  };
+})(Explore);

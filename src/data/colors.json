@@ -1,10 +1,3 @@
-/*
-  Brewer Pallettes safe for deuteranopic color blindness
-  adapted from: http://mkweb.bcgsc.ca/colorblind/
-  specifcially "15-color palettes adapted for color blindness"
-  See also: http://mkweb.bcgsc.ca/brewer/swatches/brewer.txt
-*/
-
 {
   "reds": ["#a50f15", "#de2d26", "#fb6a4a", "#fcae91", "#fee5d9"],
   "greens": ["#3c690f", "#5f820a", "#64aa2d", "#82d78c", "#befad7"],

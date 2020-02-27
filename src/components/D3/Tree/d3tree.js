@@ -4,6 +4,7 @@ import { hierarchy, tree } from 'd3-hierarchy';
 
 const D3Tree = {
   create: (root, data, config) => {
+    console.log(data);
     return D3Tree._draw(root, data, config);
   },
 
